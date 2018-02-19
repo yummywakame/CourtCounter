@@ -4,7 +4,7 @@
 ***Part of the Grow with Google Developer Challenge Scholarship: Anroid Basics - Udacity***
 I used **API 23: Android 6.0 (Marshmallow)**
 
-![App Screenshots](./screenshot2.png "App Screenshots")
+![App Screenshots](./screenshot3.png "App Screenshots")
 
 **Includes:**
 * **Vertical and horizontal layouts**: I did this by creating a copy of activity_main.xml, pasting it into a new folder under /res/ called /layout-land/, and then editing it to look good for landscape mode.
