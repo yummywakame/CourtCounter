@@ -1,6 +1,5 @@
 package com.example.android.courtcounter;
 
-
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -24,13 +23,40 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * Keeps track of display variables on screen rotation
+     */
+    // Save the variables in Bundle savedInstanceState
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putInt("saveScoreTeamA", scoreTeamA);
+        savedInstanceState.putInt("saveScoreTeamB", scoreTeamB);
+        savedInstanceState.putInt("saveFoulTeamA", foulTeamA);
+        savedInstanceState.putInt("saveFoulTeamB", foulTeamB);
+
+    }
+    // Get variables from Bundle savedInstanceState and display them
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        scoreTeamA = savedInstanceState.getInt("saveScoreTeamA");
+        scoreTeamB = savedInstanceState.getInt("saveScoreTeamB");
+        foulTeamA = savedInstanceState.getInt("saveFoulTeamA");
+        foulTeamB = savedInstanceState.getInt("saveFoulTeamB");
+        displayForTeamA(scoreTeamA);
+        displayForTeamB(scoreTeamB);
+        displayFoulForTeamA(foulTeamA);
+        displayFoulForTeamB(foulTeamB);
+
+    }
+
+    /**
      * Add 3 to score for Team A.
      */
     public void add3PointsForTeamA(View v) {
         scoreTeamA = scoreTeamA + 3;
         displayForTeamA(scoreTeamA);
     }
-
 
     /**
      * Add 2 to score for Team A.
@@ -39,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
         scoreTeamA = scoreTeamA + 2;
         displayForTeamA(scoreTeamA);
     }
-
 
     /**
      * Add 1 to score for Team A.
@@ -57,7 +82,6 @@ public class MainActivity extends AppCompatActivity {
         scoreView.setText(String.valueOf(score));
     }
 
-
     /**
      * Add 3 to score for Team B.
      */
@@ -66,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
         displayForTeamB(scoreTeamB);
     }
 
-
     /**
      * Add 2 to score for Team B.
      */
@@ -74,7 +97,6 @@ public class MainActivity extends AppCompatActivity {
         scoreTeamB = scoreTeamB + 2;
         displayForTeamB(scoreTeamB);
     }
-
 
     /**
      * Add 1 to score for Team B.
