@@ -1,7 +1,7 @@
 # Lesson 9: Project 2
 ## Court Counter App
 
-***Part of the Grow with Google Developer Challenge Scholarship: Anroid Basics - Udacity***
+***Part of the Grow with Google Developer Challenge Scholarship: Android Basics - Udacity***
 I used **API 23: Android 6.0 (Marshmallow)**
 
 ![App Screenshots](./screenshot3.png "App Screenshots")
